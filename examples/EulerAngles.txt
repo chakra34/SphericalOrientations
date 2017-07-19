@@ -1,0 +1,9 @@
+2 header
+Euler angles are taken from "Zambaldi, Claudio, et al. "Orientation informed nanoindentation of α-titanium: Indentation pileup in hexagonal metals deforming by prismatic slip. Journal of Materials Research 27.1 (2012): 356-367."
+1_eulerangles 2_eulerangles 3_eulerangles
+53.0 66.0 329.0
+107.9 26.0 277.7
+77.3 81.0 261.4
+95.0 86.4 239.4
+186.0 50.8 169.0
+268.3 55.5 89.7

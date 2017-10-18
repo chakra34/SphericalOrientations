@@ -87,97 +87,109 @@ options.point3 = np.array(options.point3)/np.linalg.norm(options.point3)
 def generate_tex_cubic(section):
 
   if section == 'header' :
-   return'\n'.join(['\\documentclass{article}',
-                    '\\usepackage{tikz}\n',
-                    '\\graphicspath{{../}{./}}'
-                    '\\usetikzlibrary{shapes,arrows}\n',
-                    '\\usepackage{miller}\n',
-                    '\\usepackage[graphics, active, tightpage]{preview}\n',
-                    '\\PreviewEnvironment{tikzpicture}\n',
-                    '\\begin{document}\n',
-                    '\\thispagestyle{empty}\n',
-                    '\\begin{tikzpicture}',
-                    '\\begin{scope}[x=19.313708cm,y=19.313708cm]',
-                    '\\draw[line width=1.0pt] (0,0) -- (0.414,0);',
-#                    '\\draw[line width=1.0pt] (0,0) -- (0.0,0.414);',
-                    '\\draw[line width=1.0pt, domain=0:15] plot ({-1 + sqrt(2)*cos(\\x)}, {sqrt(2)*sin(\\x)});',
-#                    '\\draw[line width=1.0pt, domain=75:90] plot ({ sqrt(2)*cos(\\x)}, {-1 + sqrt(2)*sin(\\x)});',
-                    '\\draw[line width=1.0pt] (0,0) -- (0.366,0.366);',
-                    '\\begin{scope}[inner sep=0pt]',
-                    '\\node[fill,rectangle,minimum height=6pt,minimum width=6pt,label={below left:\\small\\hkl<001>}] at (0.000000,0.000000) {};',
-                    '\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<101>}] at (0.414,0.000000) {};',
-#                    '\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<011>}] at (0.0,0.414) {};',
-                    '\\node[fill,ellipse,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<111>}] at (0.366,0.366) {};',
-                    '\\end{scope}\n',
-                    '\\begin{scope}[inner sep=1.0pt]\n'])
+   return """
+\\documentclass{article}
+\\usepackage{tikz}
+\\graphicspath{{../}{./}}
+\\usetikzlibrary{shapes,arrows}
+\\usepackage{miller}
+\\usepackage[graphics, active, tightpage]{preview}
+\\PreviewEnvironment{tikzpicture}
+\\begin{document}
+\\thispagestyle{empty}
+\\begin{tikzpicture}
+\\begin{scope}[x=19.313708cm,y=19.313708cm]
+\\draw[line width=1.0pt] (0,0) -- (0.414,0);
+%                    \\draw[line width=1.0pt] (0,0) -- (0.0,0.414);
+\\draw[line width=1.0pt, domain=0:15] plot ({-1 + sqrt(2)*cos(\\x)}, {sqrt(2)*sin(\\x)});
+%                    \\draw[line width=1.0pt, domain=75:90] plot ({ sqrt(2)*cos(\\x)}, {-1 + sqrt(2)*sin(\\x)});
+\\draw[line width=1.0pt] (0,0) -- (0.366,0.366);
+\\begin{scope}[inner sep=0pt]
+\\node[fill,rectangle,minimum height=6pt,minimum width=6pt,label={below left:\\small\\hkl<001>}] at (0.000000,0.000000) {};
+\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<101>}] at (0.414,0.000000) {};
+%                    \\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<011>}] at (0.0,0.414) {};
+\\node[fill,ellipse,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<111>}] at (0.366,0.366) {};
+\\end{scope}
+\\begin{scope}[inner sep=1.0pt]
+"""
   elif section == 'footer' :
-   return'\n'.join(['\\end{scope}\n',
-                    '\\end{scope}',
-                    '\\end{tikzpicture}',
-                    '\\end{document}'])
+   return """
+\\end{scope}
+\\end{scope}
+\\end{tikzpicture}
+\\end{document}
+"""
 
 def generate_tex_tetragonal(section):
    
    if section == 'header' :
-     return'\n'.join(['\\documentclass{article}',
-                      '\\usepackage{tikz}\n',
-                      '\\graphicspath{{../}{./}}'
-                      '\\usetikzlibrary{shapes,arrows}\n',
-                      '\\usepackage{miller}\n',
-                      '\\usepackage[graphics, active, tightpage]{preview}\n',
-                      '\\PreviewEnvironment{tikzpicture}\n',
-                      '\\begin{document}\n',
-                      '\\thispagestyle{empty}\n',
-                      '\\begin{tikzpicture}',
-                      '\\begin{scope}[x=19.313708cm,y=19.313708cm]',
-                      '\\draw[line width=1.0pt] (0,0) -- (1,0);',
-                      '\\draw[line width=1.0pt] (1,0) arc(0:45:1);',
-#                      '\\draw[line width=1.0pt] (0,0) -- (0,1);',
-                      '\\draw[line width=1.0pt] (0,0) -- (0.707,0.707);',
-                      '\\begin{scope}[inner sep=0pt]',
-                      '\\node[fill,rectangle,minimum height=6pt,minimum width=6pt,label={below left:\\small\\hkl<001>}] at (0.000000,0.000000) {};',
-                      '\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<100>}] at (1.000000,0.000000) {};',
-                      '\\node[fill,ellipse,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<110>}] at (0.707107,0.707107) {};',
-#                      '\\node[fill,diamond,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<010>}] at (0.0000,1.0000) {};',
-                      '\\end{scope}\n',
-                      '\\begin{scope}[inner sep=1.0pt]\n'])
+     return """
+\\documentclass{article}
+\\usepackage{tikz}
+\\graphicspath{{../}{./}}
+\\usetikzlibrary{shapes,arrows}
+\\usepackage{miller}
+\\usepackage[graphics, active, tightpage]{preview}
+\\PreviewEnvironment{tikzpicture}
+\\begin{document}
+\\thispagestyle{empty}
+\\begin{tikzpicture}
+\\begin{scope}[x=19.313708cm,y=19.313708cm]
+\\draw[line width=1.0pt] (0,0) -- (1,0);
+\\draw[line width=1.0pt] (1,0) arc(0:45:1);
+%\\draw[line width=1.0pt] (0,0) -- (0,1);
+\\draw[line width=1.0pt] (0,0) -- (0.707,0.707);
+\\begin{scope}[inner sep=0pt]
+\\node[fill,rectangle,minimum height=6pt,minimum width=6pt,label={below left:\\small\\hkl<001>}] at (0.000000,0.000000) {};
+\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<100>}] at (1.000000,0.000000) {};
+\\node[fill,ellipse,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<110>}] at (0.707107,0.707107) {};
+%\\node[fill,diamond,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<010>}] at (0.0000,1.0000) {};
+\\end{scope}
+\\begin{scope}[inner sep=1.0pt]
+"""
    elif section == 'footer' :
-     return'\n'.join(['\\end{scope}\n',
-                      '\\end{scope}',
-                      '\\end{tikzpicture}',
-                      '\\end{document}'])
+     return """
+\\end{scope}
+\\end{scope}
+\\end{tikzpicture}
+\\end{document}
+"""
 
 def generate_tex_hexagonal(section):
    
    if section == 'header' :
-     return'\n'.join(['\\documentclass{article}',
-                      '\\usepackage{tikz}\n',
-                      '\\graphicspath{{../}{./}}'
-                      '\\usetikzlibrary{shapes,arrows}\n',
-                      '\\usepackage{miller}\n',
-                      '\\usepackage[graphics, active, tightpage]{preview}\n',
-                      '\\PreviewEnvironment{tikzpicture}\n',
-                      '\\begin{document}\n',
-                      '\\thispagestyle{empty}\n',
-                      '\\begin{tikzpicture}',
-                      '\\begin{scope}[x=19.313708cm,y=19.313708cm]',
-                      '\\draw[line width=1.0pt] (0,0) -- (1,0);',
-                      '\\draw[line width=1.0pt] (1,0) arc(0:30:1);',
-#                      '\\draw[line width=1.0pt] (0,0) -- (0,1);',
-                      '\\draw[line width=1.0pt] (0,0) -- (0.866,0.50);',
-#                      '\\draw[line width=1.0pt] (0,0) -- (0.5,0.8660);',
-                      '\\begin{scope}[inner sep=0pt]',
-                      '\\node[fill,rectangle,minimum height=6pt,minimum width=6pt,label={below left:\\small\\hkl<0001>}] at (0.000000,0.000000) {};',
-                      '\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<2-1-10>}] at (1.000000,0.000000) {};',
-                      '\\node[fill,ellipse,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<10-10>}] at (0.866,0.5) {};',
-#                      '\\node[fill,diamond,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<11-20>}] at (0.5,0.866) {};',
-                      '\\end{scope}\n',
-                      '\\begin{scope}[inner sep=1.0pt]\n'])
+     return """
+\\documentclass{article}
+\\usepackage{tikz}
+\\graphicspath{{../}{./}}
+\\usetikzlibrary{shapes,arrows}
+\\usepackage{miller}
+\\usepackage[graphics, active, tightpage]{preview}
+\\PreviewEnvironment{tikzpicture}
+\\begin{document}
+\\thispagestyle{empty}
+\\begin{tikzpicture}
+\\begin{scope}[x=19.313708cm,y=19.313708cm]
+\\draw[line width=1.0pt] (0,0) -- (1,0);
+\\draw[line width=1.0pt] (1,0) arc(0:30:1);
+%\\draw[line width=1.0pt] (0,0) -- (0,1);
+\\draw[line width=1.0pt] (0,0) -- (0.866,0.50);
+%\\draw[line width=1.0pt] (0,0) -- (0.5,0.8660);
+\\begin{scope}[inner sep=0pt]
+\\node[fill,rectangle,minimum height=6pt,minimum width=6pt,label={below left:\\small\\hkl<0001>}] at (0.000000,0.000000) {};
+\\node[fill,diamond,minimum height=12pt,minimum width=6pt,label={below right:\\small\\hkl<2-1-10>}] at (1.000000,0.000000) {};
+\\node[fill,ellipse,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<10-10>}] at (0.866,0.5) {};
+%\\node[fill,diamond,minimum height=6pt,minimum width=6pt,label={above right:\\small\\hkl<11-20>}] at (0.5,0.866) {};
+\\end{scope}
+\\begin{scope}[inner sep=1.0pt]
+"""
    elif section == 'footer' :
-     return'\n'.join(['\\end{scope}\n',
-                      '\\end{scope}',
-                      '\\end{tikzpicture}',
-                      '\\end{document}'])
+     return """
+\\end{scope}
+\\end{scope}
+\\end{tikzpicture}
+\\end{document}
+"""
 
 #------------------------------------------------------#
 def append(vector):

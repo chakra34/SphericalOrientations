@@ -121,5 +121,7 @@ P.S. LaTeX and sketch are prerequisites for this.
 Nt: The utility functions are all obtained from "https://damask.mpie.de" which provides a wonderful package to perform
 crystal plasticity simulations along with various built in pre and post processing scripts.
 
+Reading: https://www.researchgate.net/profile/Philip_Eisenlohr/publication/320471526_Consistent_visualization_and_uniform_sampling_of_crystallographic_directions/links/59e75dfc4585152d5f04e5ff/Consistent-visualization-and-uniform-sampling-of-crystallographic-directions.pdf
 
+The above is a researchgate article with a valid doi (in case citation is required).
 
